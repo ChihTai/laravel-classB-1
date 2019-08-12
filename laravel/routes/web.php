@@ -14,12 +14,9 @@
 Route::get('/', function () {
     return view('index',["main"=>"index"]);
 });
-Route::get('/admin', function () {
-    return view('admin',['main'=>'title']);
-});
-Route::get('/admin/title', function () {
-    return view('admin',['main'=>'title']);
-});
+Route::get('/admin', "TitleCT@index");
+Route::get('/admin/title', "TitleCT@index");
+
 Route::get('/admin/ad', function () {
     return view('admin',['main'=>'ad']);
 });
@@ -32,3 +29,17 @@ Route::get('/news', function () {
 Route::get('/login', function () {
     return view('index',["main"=>"login"]);
 });
+
+
+//後台更新圖片的請求路徑
+
+Route::get('/admin/update/title/{id}', "TitleCT@updateImg");
+
+
+
+//後台新增資料
+Route::get('/admin/add/title', "TitleCT@create");
+
+
+//api的路由
+Route::post('/api/add/title', "TitleCT@store");
