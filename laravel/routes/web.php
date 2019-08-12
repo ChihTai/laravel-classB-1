@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index',["main"=>"index"]);
-});
+Route::get('/', "IndexCT@index");
 Route::get('/admin', "TitleCT@index");
 Route::get('/admin/title', "TitleCT@index");
 
@@ -43,3 +41,6 @@ Route::get('/admin/add/title', "TitleCT@create");
 
 //api的路由
 Route::post('/api/add/title', "TitleCT@store");
+Route::post('/api/update/title/{id}', "TitleCT@storeImg");
+Route::post('/api/edit/title', "TitleCT@update");
+
