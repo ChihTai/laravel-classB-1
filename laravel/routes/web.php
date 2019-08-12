@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index',["main"=>"index"]);
+});
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/news', function () {
+    return view('index',["main"=>"news"]);
+});
+Route::get('/login', function () {
+    return view('index',["main"=>"login"]);
 });
