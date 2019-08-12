@@ -15,8 +15,17 @@ Route::get('/', function () {
     return view('index',["main"=>"index"]);
 });
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin',['main'=>'title']);
 });
+Route::get('/admin/title', function () {
+    return view('admin',['main'=>'title']);
+});
+Route::get('/admin/ad', function () {
+    return view('admin',['main'=>'ad']);
+});
+
+
+
 Route::get('/news', function () {
     return view('index',["main"=>"news"]);
 });
